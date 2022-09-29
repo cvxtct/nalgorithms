@@ -1,13 +1,9 @@
-package main
+package dpr
 
 import "fmt"
 
-func main() {
-	f()
-	fmt.Println("Returned normally from f.")
-}
-
-func f() {
+// https://go.dev/blog/defer-panic-and-recover
+func Ffunc() {
 	defer func() {
 		if r := recover(); r != nil {
 			fmt.Println("Recovered in f", r)
@@ -16,6 +12,7 @@ func f() {
 	fmt.Println("Calling g")
 	g(0)
 	fmt.Println("Returned normally from g")
+
 }
 
 func g(i int) {
