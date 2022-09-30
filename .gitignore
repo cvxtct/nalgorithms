@@ -1,0 +1,6 @@
+# IDE
+*.code-workspace
+
+#OS
+.DS_Store
+
