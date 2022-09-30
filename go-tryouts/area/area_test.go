@@ -2,7 +2,6 @@ package area
 
 import (
 	"fmt"
-	"go-tryouts/area"
 	"math"
 	"testing"
 )
@@ -84,30 +83,31 @@ func TestCircleArea(t *testing.T) {
 	}
 }
 
-func TestCiArea(t *testing.T) {
-	var ciAreaTest = []struct {
-		X, Y, R  float64
-		expected float64
-	}{
-		{X: 0, Y: 0, R: 5, expected: 78.539816},
-	}
+// https://medium.com/@ishagirdhar/import-cycles-in-golang-b467f9f0c5a0
+// func TestCiArea(t *testing.T) {
+// 	var ciAreaTest = []struct {
+// 		X, Y, R  float64
+// 		expected float64
+// 	}{
+// 		{X: 0, Y: 0, R: 5, expected: 78.539816},
+// 	}
 
-	for _, tt := range ciAreaTest {
-		testname := fmt.Sprintf("%f, %f, %f", tt.X, tt.Y, tt.R)
-		t.Run(testname, func(t *testing.T) {
-			c := area.Circle{
-				X: tt.X,
-				Y: tt.Y,
-				R: tt.R,
-			}
-			res := c.Area()
-			round := roundFloat(res, 6)
-			if round != tt.expected {
-				t.Errorf("got %f expected %f", round, tt.expected)
-			}
-		})
-	}
-}
+// 	for _, tt := range ciAreaTest {
+// 		testname := fmt.Sprintf("%f, %f, %f", tt.X, tt.Y, tt.R)
+// 		t.Run(testname, func(t *testing.T) {
+// 			c := area.Circle{
+// 				X: tt.X,
+// 				Y: tt.Y,
+// 				R: tt.R,
+// 			}
+// 			res := c.Area()
+// 			round := roundFloat(res, 6)
+// 			if round != tt.expected {
+// 				t.Errorf("got %f expected %f", round, tt.expected)
+// 			}
+// 		})
+// 	}
+// }
 
 func BenchmarkCircleArea(b *testing.B) {
 	for i := 0; i < b.N; i++ {
