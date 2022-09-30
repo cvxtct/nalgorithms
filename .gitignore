@@ -1,5 +1,5 @@
 # IDE
-*.code-workspace
+**/*.code-workspace
 
 #OS
 .DS_Store
