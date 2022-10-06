@@ -55,6 +55,21 @@ match = re.search(r'[a-z,\s.0-9]+', str)
 if match:
     print(match.group()) 
 
+eml = 'Content-Type: text/plain; charset="us-ascii"\nMIME-Version: 1.0\nContent-Transfer-Encoding: 7bit\nTo: Recipient <recipient@example.com>\nFrom: Author <author@example.com>\nSubject: Simple test message\n\nThis is the body of the message.'
+
+match = re.search('Subject:\s(.+?)\n', eml)
+if match:
+    print(match.group(1))
+
+match = re.search('\n\n(.+?)\.', eml)
+if match:
+    print(match.group(1))
+
+
+
+
+
+
 
 
 strings = ['abcNdgM', 'abcdg', 'MrtyNNgMM']
