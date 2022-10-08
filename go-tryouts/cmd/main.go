@@ -47,6 +47,10 @@ func main() {
 	res := area.TotalArea(&c, &r)
 	fmt.Println(res)
 
+	fmt.Println("================== return ========================")
+	a := []int32{1, 2, 3, 4}
+	fmt.Println(app.reverse(a))
+
 }
 
 // func (app *Config) Ffunc() {
