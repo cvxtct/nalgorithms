@@ -51,6 +51,10 @@ func main() {
 	a := []int32{1, 2, 3, 4}
 	fmt.Println(app.reverse(a))
 
+	fmt.Println("================== candles ========================")
+	b := []int32{3, 2, 1, 3, 5, 3, 6, 2, 6, 6}
+	fmt.Println(app.birthdayCakeCandles(b))
+
 }
 
 // func (app *Config) Ffunc() {
