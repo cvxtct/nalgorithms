@@ -12,27 +12,32 @@ def insertionSort1(n, arr):
 
     arr[idx+1] = target
     print(' '.join(map(str, arr)))
-    # small = arr[n-1]
-    # while n != 0:
-    #     print(arr[n-1])
-    #     if arr[n-1] >= small:
-    #         arr[n-1] = arr[n-2] 
-    #     print(' '.join(map(str, arr)))
-    #     n = n-1
 
-    # for i in reversed((range(n))):
-    #     arr[n-1] = arr[n-2]
-    #     if arr[i] > small:
-    #         arr[i] = arr[i-1]
-    #         print(' '.join(map(str, arr)))
-    #     if arr[i] < small:
-  
-    #         arr[i] = small
-    #         print(' '.join(map(str, arr)))
-    #     if small in arr:
-    #         break
-        
+def insertionSort2(n, arr):
+    # first is sorted
+    # check 1 against 0
+    if arr[1] > arr[0]:
+        pass
+    # else:
+    #     arr[1] = arr[0]
 
+    for i in range(len(arr)):
+        if i == 0:
+            continue
+        #print(i)
+       # while j != 0:
+        counter = 0
+        for j in reversed(range(i)):
+            if arr[i-counter] < arr[j]: 
+                tmp = arr[j]
+                arr[j] = arr[i-counter]
+                arr[i-counter] = tmp  
+            counter += 1
+     
+        print(' '.join(map(str, arr)))
+    
+ 
 if __name__ == '__main__':
-    #insertionSort1(14, [1, 3, 5, 9, 13, 22, 27, 35, 46, 51, 55, 83, 87, 23])
+    # insertionSort1(14, [1, 3, 5, 9, 13, 22, 27, 35, 46, 51, 55, 83, 87, 23])
     insertionSort1(5, [1,2,4,5,3])
+    insertionSort2(8, [8,7,6,5,4,3,2,1])

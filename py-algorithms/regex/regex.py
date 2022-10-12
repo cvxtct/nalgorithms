@@ -65,10 +65,10 @@ match = re.search('\n\n(.+?)\.', eml)
 if match:
     print(match.group(1))
 
-
-
-
-
+print('==== rplc ====')
+str = 'purple <= >= [] | --al.123ice-b@goo-gle.com monkey dishwasher'
+str = re.sub('[<,>,=,-]', '', str)
+print(str)
 
 
 

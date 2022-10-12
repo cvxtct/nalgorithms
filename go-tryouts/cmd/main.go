@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"go-tryouts/area"
 	"go-tryouts/dpr"
+	"go-tryouts/hckrnk"
 )
 
 type Config struct {
@@ -54,6 +55,15 @@ func main() {
 	fmt.Println("================== candles ========================")
 	b := []int32{3, 2, 1, 3, 5, 3, 6, 2, 6, 6}
 	fmt.Println(app.birthdayCakeCandles(b))
+
+	fmt.Println("================= insertion sort 1 ===============")
+	n := 5
+	arr := []int{1, 2, 4, 5, 3}
+	fmt.Println(arr[2])
+	fmt.Println(arr[n-1])
+	arr[2] = arr[3]
+	fmt.Println(arr[2])
+	hckrnk.InsertionSort1(n, arr)
 
 }
 
