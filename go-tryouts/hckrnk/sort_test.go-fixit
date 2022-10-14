@@ -53,5 +53,6 @@ func testFramework(t *testing.T, sortingFunction func(int, []int) []int) {
 
 func TestInsertionSort10(t *testing.T) {
 	log.Println("---------- Insertion Sort 1 -------------")
+	// Bug
 	testFramework(t, InsertionSort1[int])
 }

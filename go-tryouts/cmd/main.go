@@ -65,6 +65,11 @@ func main() {
 	fmt.Println(arr[2])
 	hckrnk.InsertionSort1(n, arr)
 
+	fmt.Println("================= insertion sort 2 ===============")
+	n = 8
+	arr = []int{8, 3, 6, 7, 4, 3, 2, 1}
+	hckrnk.InsertionSort2(n, arr)
+
 }
 
 // func (app *Config) Ffunc() {
