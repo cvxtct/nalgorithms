@@ -1,0 +1,57 @@
+package hckrnk
+
+import (
+	"log"
+	"reflect"
+	"testing"
+)
+
+func testFramework(t *testing.T, sortingFunction func(int, []int) []int) {
+	sortTest := []struct {
+		input_length int
+		input_slice  []int
+		expected     []int
+		name         string
+	}{
+		//Sorted slice
+		{
+			input_length: 10,
+			input_slice:  []int{1, 2, 3, 4, 5, 6, 7, 8, 9, 10},
+			expected:     []int{1, 2, 3, 4, 5, 6, 7, 8, 9, 10},
+			name:         "Sorted Unsigned",
+		},
+		//Reversed slice
+		{
+			input_length: 10,
+			input_slice:  []int{10, 9, 8, 7, 6, 5, 4, 3, 2, 1},
+			expected:     []int{1, 2, 3, 4, 5, 6, 7, 8, 9, 10},
+			name:         "Reversed Unsigned",
+		},
+		//Hackerank example slice 1
+		{
+			input_length: 5,
+			input_slice:  []int{1, 2, 4, 5, 3},
+			expected:     []int{1, 2, 3, 4, 5},
+			name:         "Hackerrank example slice 1",
+		},
+	}
+
+	for _, test := range sortTest {
+		t.Run(test.name, func(t *testing.T) {
+			log.Printf("Current %s", test.name)
+			actual := sortingFunction(test.input_length, test.input_slice)
+			sorted := reflect.DeepEqual(actual, test.expected)
+			if !sorted {
+				t.Errorf("test %s failed", test.name)
+				t.Errorf("actual %v expected %v", actual, test.expected)
+			}
+		})
+	}
+}
+
+// BEGIN TESTS
+
+func TestInsertionSort10(t *testing.T) {
+	log.Println("---------- Insertion Sort 1 -------------")
+	testFramework(t, InsertionSort1[int])
+}
