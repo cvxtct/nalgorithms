@@ -27,7 +27,7 @@ func TestInsertionSort1(t *testing.T) {
 	}
 }
 
-// TODO benchmark test, InsertionSort2 test
+// TODO benchmark test
 
 func TestInsertionSort2(t *testing.T) {
 	var insertionSort1Test = []struct {
@@ -50,3 +50,5 @@ func TestInsertionSort2(t *testing.T) {
 		})
 	}
 }
+
+// TODO benchmark test

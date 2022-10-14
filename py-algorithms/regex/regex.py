@@ -14,8 +14,8 @@ import re
 # \ -- inhibit the "specialness" of a character. So, for example, use \. to match a period or \\ to match a slash. If you are unsure if a character has special meaning, such as '@', you can try putting a slash in front of it, \@. If its not a valid escape sequence, like \c, your python program will halt with an error.
 # 001 A very simple solution:
 
-str = 'an example word:cat!!'
-match = re.search(r'\sword:\w\w\w', str)
+strn = 'an example word:cat!!'
+match = re.search(r'\sword:\w\w\w', strn)
 if match:
     print(match.group())
 match = re.search(r'iii', 'piiig')
@@ -30,28 +30,28 @@ if match:
 match = re.search(r'^\d+\w\d', 'pi12i2ig')
 if match:
     print(match.group())
-str = 'purple alice-b@google.com monkey dishwasher'
-match = re.search(r'\w+@\w+', str)
+strn = 'purple alice-b@google.com monkey dishwasher'
+match = re.search(r'\w+@\w+', strn)
 if match:
     print(match.group()) 
-str = 'purple al.ice-b@goo-gle.com monkey dishwasher'
-match = re.search(r'[\w.-]+@[\w.-]+', str)
+strn = 'purple al.ice-b@goo-gle.com monkey dishwasher'
+match = re.search(r'[\w.-]+@[\w.-]+', strn)
 if match:
     print(match.group())  
-str = 'purple al.123ice-b@goo-gle.com monkey dishwasher'
-match = re.search(r'[\w.-]+@[\w.-]+', str)
+strn = 'purple al.123ice-b@goo-gle.com monkey dishwasher'
+match = re.search(r'[\w.-]+@[\w.-]+', strn)
 if match:
     print(match.group())
-str = 'purple al.123ice-b@goo-gle.com monkey dishwasher'
-match = re.search(r'[0-9]+', str)
+strn = 'purple al.123ice-b@goo-gle.com monkey dishwasher'
+match = re.search(r'[0-9]+', strn)
 if match:
     print(match.group())  
-str = 'purple al.123ice-b@goo-gle.com monkey dishwasher'
-match = re.findall('g', str)
+strn = 'purple al.123ice-b@goo-gle.com monkey dishwasher'
+match = re.findall('g', strn)
 if match:
     print(match)  
-str = 'purple al.123ice-b@goo-gle.com monkey dishwasher'
-match = re.search(r'[a-z,\s.0-9]+', str)
+strn = 'purple al.123ice-b@goo-gle.com monkey dishwasher'
+match = re.search(r'[a-z,\s.0-9]+', strn)
 if match:
     print(match.group()) 
 
@@ -66,10 +66,14 @@ if match:
     print(match.group(1))
 
 print('==== rplc ====')
-str = 'purple <= >= [] | --al.123ice-b@goo-gle.com monkey dishwasher'
-str = re.sub('[<,>,=,-]', '', str)
-print(str)
+strn = 'purple <= >= [] | --al.123ice-b@goo-gle.com monkey dishwasher'
+strn = re.sub('[<,>,=,-]', '', strn)
+print(strn)
 
+# split at comma or dot
+inp = "100,000,000.000"
+res = re.split(r"[\.,]", inp)
+print('\n'.join(map(str, res)))
 
 
 strings = ['abcNdgM', 'abcdg', 'MrtyNNgMM']
