@@ -1,6 +1,9 @@
 package basics
 
-import "fmt"
+import (
+	"fmt"
+	"log"
+)
 
 func Basics() {
 	fmt.Println("foo bar")
@@ -13,4 +16,21 @@ func Basics() {
 
 	i = 2
 	fmt.Println("I is set to", i)
+}
+
+func PointerBasics() {
+
+	// var myString string
+	// myString = "Green"
+	myString := "Green"
+
+	log.Println("before:", myString)
+	changeUsingPointer(&myString)
+	log.Println("after:", myString)
+
+}
+
+func changeUsingPointer(s *string) {
+	newValue := "Red"
+	*s = newValue
 }

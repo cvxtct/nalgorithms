@@ -19,6 +19,7 @@ func QuickSort(n int, arr []int) []int {
 			e = append(e, arr[i])
 		}
 	}
+	// concatenate slices
 	helpers = append(helpers, e, l, r)
 	for _, v := range helpers {
 		// fmt.Println(v)

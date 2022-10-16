@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"go-tryouts/area"
+	"go-tryouts/basics"
 	"go-tryouts/dpr"
 	"go-tryouts/hckrnk"
 )
@@ -76,6 +77,9 @@ func main() {
 	result := hckrnk.QuickSort(n, arr)
 	fmt.Println(result)
 
+	fmt.Println("=========== Basics ================")
+	basics.Basics()
+	basics.PointerBasics()
 }
 
 // func (app *Config) Ffunc() {
