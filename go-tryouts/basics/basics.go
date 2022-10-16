@@ -5,6 +5,11 @@ import (
 	"log"
 )
 
+type User struct {
+	FirstName string
+	LastName  string
+}
+
 func Basics() {
 	fmt.Println("foo bar")
 
@@ -16,6 +21,25 @@ func Basics() {
 
 	i = 2
 	fmt.Println("I is set to", i)
+
+	myMap := make(map[string]string)
+
+	myMap["Dog"] = "Samson"
+
+	log.Println(myMap)
+	log.Println(myMap["Dog"])
+
+	otherMap := make(map[string]User)
+
+	me := User{
+		FirstName: "Attila",
+		LastName:  "Balazs",
+	}
+
+	otherMap["me"] = me
+
+	log.Println(otherMap["me"].FirstName)
+
 }
 
 func PointerBasics() {
