@@ -70,6 +70,12 @@ func main() {
 	arr = []int{8, 3, 6, 7, 4, 3, 2, 1}
 	hckrnk.InsertionSort2(n, arr)
 
+	fmt.Println("================= Quick sort ===============")
+	n = 5
+	arr = []int{4, 5, 3, 7, 2}
+	result := hckrnk.QuickSort(n, arr)
+	fmt.Println(result)
+
 }
 
 // func (app *Config) Ffunc() {
