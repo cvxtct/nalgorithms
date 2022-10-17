@@ -58,3 +58,15 @@ func changeUsingPointer(s *string) {
 	newValue := "Red"
 	*s = newValue
 }
+
+func Decisions() {
+	var isTrue bool
+
+	isTrue = true
+
+	if isTrue {
+		log.Println("isTrue is, ", isTrue)
+	} else {
+		log.Println("isTrue is", isTrue)
+	}
+}
