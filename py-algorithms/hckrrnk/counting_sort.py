@@ -9,14 +9,8 @@ def counting_sort(n, arr):
         if arr[i] in seen:
             count[arr[i]] += 1
 
-    # for i in count:
-    #     if count[i] > 0:
-    #         print( " ".join( [str(i)]*count[i] ), end=" " )
     res = []
     for i in range(0, len(count)):
-        print(i)
-        if count[i] == 0:
-            res.append(i)
         if count[i] > 0:
             cnt = count[i]
             while cnt > 0:
