@@ -5,7 +5,7 @@ func CountingSort(n int, arr []int) []int {
 	seen := make(map[int]bool)
 	res := []int{}
 
-	for i, _ := range arr {
+	for i := range arr {
 		if !seen[arr[i]] {
 			seen[arr[i]] = true
 		}
@@ -14,7 +14,7 @@ func CountingSort(n int, arr []int) []int {
 		}
 	}
 
-	for i, _ := range arr {
+	for i := range arr {
 		if count[i] > 0 {
 			cnt := count[i]
 			for cnt > 0 {

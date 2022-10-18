@@ -1,5 +1,7 @@
 package hckrnk
 
+import "log"
+
 func QuickSort(n int, arr []int) []int {
 	pivot := arr[0]
 	e := make([]int, 0)
@@ -20,7 +22,8 @@ func QuickSort(n int, arr []int) []int {
 		}
 	}
 	// concatenate slices
-	helpers = append(helpers, e, l, r)
+	helpers = append(helpers, l, e, r)
+	log.Println(helpers)
 	for _, v := range helpers {
 		// fmt.Println(v)
 		res = append(res, v...)
