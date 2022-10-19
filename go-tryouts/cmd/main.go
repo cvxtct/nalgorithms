@@ -86,6 +86,7 @@ func main() {
 	basics.Basics()
 	basics.PointerBasics()
 	basics.LoopOverData()
+	basics.InterFacesPractice()
 
 }
 
