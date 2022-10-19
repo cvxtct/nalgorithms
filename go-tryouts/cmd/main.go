@@ -87,6 +87,8 @@ func main() {
 	basics.PointerBasics()
 	basics.LoopOverData()
 	basics.InterFacesPractice()
+	basics.RunIt()
+	basics.RwJson()
 
 }
 
