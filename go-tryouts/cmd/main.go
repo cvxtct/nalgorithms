@@ -85,6 +85,8 @@ func main() {
 	fmt.Println("=========== Basics ================")
 	basics.Basics()
 	basics.PointerBasics()
+	basics.LoopOverData()
+
 }
 
 // func (app *Config) Ffunc() {

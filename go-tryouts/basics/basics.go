@@ -103,3 +103,38 @@ func Decisions() {
 	}
 
 }
+
+func LoopOverData() {
+	for i := 0; i <= 10; i++ {
+		log.Println(i)
+	}
+
+	animals := []string{"dog", "fish", "horse", "cow"}
+
+	for i, animal := range animals {
+		log.Println(i, animal)
+	}
+
+	anim := make(map[string]string)
+	anim["dog"] = "doggo"
+	anim["cat"] = "garfield"
+
+	for animalType, anim := range anim {
+		log.Println(animalType, anim)
+	}
+
+	// string is slice of bytes
+	var FirstLine = "Once upon a midnight dreary"
+
+	for i, v := range FirstLine {
+		log.Println(i, " : ", v)
+	}
+
+	var users []User
+	users = append(users, User{"A", "B"})
+	users = append(users, User{"C", "D"})
+
+	for _, v := range users {
+		log.Println(v.FirstName, v.LastName)
+	}
+}
