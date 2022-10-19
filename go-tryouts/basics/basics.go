@@ -1,6 +1,7 @@
 package basics
 
 import (
+	"errors"
 	"fmt"
 	"log"
 )
@@ -137,4 +138,14 @@ func LoopOverData() {
 	for _, v := range users {
 		log.Println(v.FirstName, v.LastName)
 	}
+}
+
+func Divide(x, y float32) (float32, error) {
+	var result float32
+	if y == 0 {
+		return result, errors.New("can not divide by 0")
+	}
+
+	result = x / y
+	return result, nil
 }

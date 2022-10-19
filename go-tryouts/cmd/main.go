@@ -6,6 +6,7 @@ import (
 	"go-tryouts/basics"
 	"go-tryouts/dpr"
 	"go-tryouts/hckrnk"
+	"log"
 )
 
 type Config struct {
@@ -89,6 +90,11 @@ func main() {
 	basics.InterFacesPractice()
 	basics.RunIt()
 	basics.RwJson()
+	resu, err := basics.Divide(100, 10)
+	if err != nil {
+		log.Println(err)
+	}
+	log.Println(resu)
 
 }
 
