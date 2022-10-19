@@ -10,7 +10,7 @@ def counting_sort(n, arr):
             count[arr[i]] += 1
 
     res = []
-    for i in range(0, len(count)):
+    for i in range(len(count)):
         if count[i] > 0:
             cnt = count[i]
             while cnt > 0:
