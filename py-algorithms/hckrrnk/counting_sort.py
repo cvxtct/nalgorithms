@@ -1,6 +1,7 @@
 def counting_sort(n, arr):
     # count = [0 for _ in range(max(arr)+1)]
     count = [0 for _ in range(100)]
+    # count = [0] * 100
     seen = set()
 
     for i in range(len(arr)):
