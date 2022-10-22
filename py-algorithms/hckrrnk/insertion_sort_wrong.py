@@ -10,8 +10,9 @@ def insertion_sort(l):
            l[j+1] = l[j]
            j -= 1
         l[j+1] = key
-    print(shifts)
+    # print(shifts)
 # arr = [7 ,4, 3, 5, 6, 2]
 arr = [2, 1 ,3 ,1 ,2]
 insertion_sort(arr)
 print(" ".join(map(str,arr)))
+print(map(str, arr).__dir__())

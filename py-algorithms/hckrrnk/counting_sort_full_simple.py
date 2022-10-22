@@ -10,18 +10,7 @@ python counting_sort.py
 
 
 def counting_sort(collection):
-    """Pure implementation of counting sort algorithm in Python
-    :param collection: some mutable ordered collection with heterogeneous
-    comparable items inside
-    :return: the same collection ordered by ascending
-    Examples:
-    >>> counting_sort([0, 5, 3, 2, 2])
-    [0, 2, 2, 3, 5]
-    >>> counting_sort([])
-    []
-    >>> counting_sort([-2, -5, -45])
-    [-45, -5, -2]
-    """
+
     # if the collection is empty, returns empty
     if collection == []:
         return []
@@ -39,11 +28,14 @@ def counting_sort(collection):
     for number in collection:
         counting_arr[number - coll_min] += 1
 
+    print(counting_arr)
+
     # sum each position with it's predecessors. now, counting_arr[i] tells
     # us how many elements <= i has in the collection
     for i in range(1, counting_arr_length):
         counting_arr[i] = counting_arr[i] + counting_arr[i - 1]
 
+    print(counting_arr)
     # create the output collection
     ordered = [0] * coll_len
 
@@ -65,9 +57,6 @@ def counting_sort_string(string):
 
 
 if __name__ == "__main__":
-    # Test string sort
-    assert "eghhiiinrsssttt" == counting_sort_string("thisisthestring")
-
-    user_input = input("Enter numbers separated by a comma:\n").strip()
-    unsorted = [int(item) for item in user_input.split(",")]
-    print(counting_sort(unsorted))
+    arr = [1, 4, 1, 2, 7, 5 ,2]
+    print(counting_sort(arr))
+    
