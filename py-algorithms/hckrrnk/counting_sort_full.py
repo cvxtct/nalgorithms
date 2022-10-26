@@ -13,6 +13,7 @@ def counting_sort(n, arr):
     print(count)
 
     for i in range(1, count_arr_len):
+        # this identify the slot where the actual elem belongs to
         count[i] = count[i] + count[i-1]
 
     print(count)
