@@ -1,4 +1,5 @@
-def counting_sort(n, arr):
+def counting_sort(arr):
+    # integer casts needed due to the hackerrank input type
     arr_len = len(arr) # this is actualy given
     arr_max = int(max([i[0] for i in arr]))
     arr_min = int(min([i[0] for i in arr]))
@@ -37,29 +38,4 @@ def counting_sort(n, arr):
 if __name__ == '__main__':
     n = 20
     arr = [[0, 'ab'], [6, 'cd'], [0, 'ef'], [6, 'gh'], [4, 'ij'], [0, 'ab'], [6, 'cd'], [0, 'ef'], [6, 'gh'], [0, 'ij'], [4, 'that'], [3, 'be'], [0, 'to'], [1, 'be'], [5, 'question'], [1, 'or'], [2, 'not'], [4, 'is'], [2, 'to'], [4, 'the']]
-    inp = """20
-            0 ab
-            6 cd
-            0 ef
-            6 gh
-            4 ij
-            0 ab
-            6 cd
-            0 ef
-            6 gh
-            0 ij
-            4 that
-            3 be
-            0 to
-            1 be
-            5 question
-            1 or
-            2 not
-            4 is
-            2 to
-            4 the"""
-    # arr2 = []
-    # for _ in range(inp):
-    #     arr.append(input().rstrip().split())
-    # print(arr2)
     print(counting_sort(n, arr))
