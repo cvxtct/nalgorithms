@@ -47,5 +47,5 @@ func CountingSortStable(arr []int) []int {
 	// fmt.Println(count)
 	fmt.Println(oredered)
 
-	return arr
+	return oredered
 }
