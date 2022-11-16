@@ -25,7 +25,7 @@ def fibonacci(n) -> int:
 if __name__ == '__main__':
     sys.setrecursionlimit(10_000)
     start = perf_counter()
-    f = fibonacci(2000)
+    f = fibonacci(50)
     end = perf_counter()
 
     print(f)
