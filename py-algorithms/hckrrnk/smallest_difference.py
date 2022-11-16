@@ -2,19 +2,18 @@ def mind_diff_pairs(arr , n):
 
     ordered = arr
     ordered.sort()
-    # get closest pairs
-    
-    minimum_distance = max(ordered)
-    closest_pairs = []
-    for i in range(0, len(ordered) - 1):
-        calc_distance = ordered[i+1] - ordered[i]
-        if minimum_distance > calc_distance:
-            minimum_distance = calc_distance
 
-    print(minimum_distance)
-    print(ordered[(ordered.index(max(ordered)))])
-    print(ordered)
-    return ordered
+    minimum_distance = ordered[1] - ordered[0] 
+    closest_pairs = []
+    for i in range(2, n):
+        minimum_distance = min(minimum_distance, ordered[i] - ordered[i-1])
+
+    for i in range(1, n):
+        if (ordered[i] - ordered[i-1]) == minimum_distance:
+            closest_pairs.append(ordered[i-1])
+            closest_pairs.append(ordered[i])
+
+    return closest_pairs
 
 
 if __name__ == "__main__":
