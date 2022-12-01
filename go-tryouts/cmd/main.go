@@ -6,6 +6,7 @@ import (
 	"go-tryouts/basics"
 	"go-tryouts/dpr"
 	"go-tryouts/hckrnk"
+	"go-tryouts/shortener"
 	"log"
 )
 
@@ -103,6 +104,20 @@ func main() {
 	// TODO turn this intro slice of maps:
 	// arr := map[int]string{[0, 'ab'], [6, 'cd'], [0, 'ef'], [6, 'gh'], [4, 'ij'], [0, 'ab'], [6, 'cd'], [0, 'ef'], [6, 'gh'], [0, 'ij'], [4, 'that'], [3, 'be'], [0, 'to'], [1, 'be'], [5, 'question'], [1, 'or'], [2, 'not'], [4, 'is'], [2, 'to'], [4, 'the']}
 	// fmt.Println(arr)
+
+	fmt.Println("================== Shortener =====================")
+
+	short := shortener.Shortener{}
+	urlToShort := "https://www.hackerrank.com/challenges/insertion-sort/problem?isFullScreen=true"
+	short_res := short.GenerateShortId(urlToShort)
+	fmt.Println(short_res)
+	short_res_2 := short.GenerateTokenFromString(urlToShort)
+	fmt.Println(short_res_2)
+	token := "https://www.hackerrank.com/challenges/insertion-sort/problem?isFullScreen=true&hash=.3xyKia.CHFVM0KMu1ScdzK8uTxxs5j7W7O35YGy1BOmIhLGvto"
+	short_res_3 := short.VerifyToken(token)
+	fmt.Println(short_res_3)
+	fmt.Println(short.GenerateShortedURL(short_res))
+
 }
 
 // func (app *Config) Ffunc() {
